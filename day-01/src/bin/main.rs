@@ -1,7 +1,25 @@
 fn main() {
     let input = include_str!("./input.txt");
-    let output = part2(input);
-    println!("Part two answer is: {}", output);
+    let part1_output = part1(input);
+    let part2_output = part2(input);
+    println!("Part one answer is: {}", part1_output);
+    println!("Part two answer is: {}", part2_output);
+}
+
+fn part1(input: &str) -> String {
+    let mut sum = 0;
+    for line in input.lines() {
+        let digits: String = line.chars().filter(|p| p.is_ascii_digit()).collect();
+        let line_sum = format!(
+            "{}{}",
+            digits.chars().next().unwrap(),
+            digits.chars().last().unwrap()
+        )
+        .parse::<u32>()
+        .unwrap();
+        sum += line_sum;
+    }
+    sum.to_string()
 }
 
 fn part2(input: &str) -> String {
@@ -35,10 +53,10 @@ fn part2(input: &str) -> String {
 
 #[cfg(test)]
 mod tests {
-    use crate::part2;
+    use super::*;
 
     #[test]
-    fn it_works() {
+    fn test_part2() {
         let result = part2(include_str!("./testinput.txt"));
         assert_eq!(result, "281");
     }
