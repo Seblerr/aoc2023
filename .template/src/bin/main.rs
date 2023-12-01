@@ -17,14 +17,15 @@ fn part2(input: &str) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-    #[test]
 
+    #[test]
     fn part1_test() {
         let input = include_str!("./testinput1.txt");
         let result = part1(input);
         assert_eq!(result, "todo!()");
     }
 
+    #[test]
     fn part2_test() {
         let input = include_str!("./testinput2.txt");
         let result = part2(input);
