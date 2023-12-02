@@ -3,6 +3,9 @@
 debug/
 target/
 
+input*
+testinput*
+
 Cargo.toml
 Cargo.lock
 
