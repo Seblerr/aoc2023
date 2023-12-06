@@ -3,8 +3,8 @@
 debug/
 target/
 
-input*
-testinput*
+input.txt
+example.txt
 
 Cargo.toml
 Cargo.lock
